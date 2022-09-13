@@ -42,7 +42,7 @@ void callback_laser_data(const sensor_msgs::LaserScan &msg){
     float radius = 0.5;
 
     //angle increment of measurement
-    int alpha = 30;
+    int alpha = 15; // can be higher resolution than python file because faster
     int step = (n*alpha)/360;
     
     // ROS_INFO("\nnumElem: %i\nn: %i\nsize ranges: %ld\nsize range: %ld\nstep: %i\n\n", numElem, n, msg.ranges.size(), msg.ranges[0].size(), step);
@@ -50,7 +50,7 @@ void callback_laser_data(const sensor_msgs::LaserScan &msg){
     // front
     for (int i=0; i<n; i+=step){
         if (msg.ranges[i] < radius){
-            ROS_INFO("front\nrange: %f\ni: %i\n\n", msg.ranges[i], i);
+            ROS_INFO("front");
         }
     }
     for (int i=(7*n); i<(8*n); i+=step){
