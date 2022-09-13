@@ -17,6 +17,8 @@ def callback_laser_data(msg):
     alpha = 30
     step = round((n*alpha)/360)
 
+    # print length of msg.ranges (for c++ file)
+    # rospy.loginfo(len(msg.ranges))
 
     # front
     for i in msg.ranges[0:n:step]:
