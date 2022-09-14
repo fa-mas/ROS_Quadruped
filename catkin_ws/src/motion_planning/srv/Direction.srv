@@ -1,0 +1,5 @@
+bool ready
+---
+string direction
+float32 angle
+float32[3] vector
