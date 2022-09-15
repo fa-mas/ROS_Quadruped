@@ -10,6 +10,10 @@
 void callback_laser_data(const sensor_msgs::LaserScan &msg);
 bool give_direction(motion_planning::Direction::Request &req, motion_planning::Direction::Response &res);
 
+// prototypes
+void avoid_obstacle(motion_planning::Direction::Response &res);
+// void get_user_input(motion_planning::Direction::Response &res);
+
 // declare Pub, Sub & Srv
 // ros::Publisher pub;
 ros::Subscriber sub;
@@ -97,11 +101,25 @@ void callback_laser_data(const sensor_msgs::LaserScan &msg){
     //ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
 }
 
-// callback function returns True if service was called, and assignes values to response
+// service callback function returns true if service was called, and assignes values to response
 bool give_direction(motion_planning::Direction::Request &req, motion_planning::Direction::Response &res){
-    
+
+    // default value
+    res.dir = "step";
+    res.ang = 0;
+    res.vec = {1, 0, 0};
+
+    // functions to alter response (last one is prioritised)
+    // get_user_input(res)
+    avoid_obstacle(res);
+
+    return true;
+}
+
+// alters /direction response to avoid obstacles
+void avoid_obstacle(motion_planning::Direction::Response &res){
     // debug
-    ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
+    // ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
     
     // obstacle front & left
     if ((Obstacle::arr.at(0) == Position::FRONT) && (Obstacle::arr.at(1) == Position::LEFT)){
@@ -145,14 +163,7 @@ bool give_direction(motion_planning::Direction::Request &req, motion_planning::D
         res.ang = 0;
         res.vec = {0, -1, 0};
     }
-    // no obstacle ahead
-    else {
-        // forward
-        res.dir = "step";
-        res.ang = 0;
-        res.vec = {1, 0, 0};
-    }
-    // debug
-    ROS_INFO("direction: %s", res.dir.c_str());
-    return true;
 }
+
+//void get_user_input(motion_planning::Direction::Response &res){ // alters /direction response depending on user input
+//}

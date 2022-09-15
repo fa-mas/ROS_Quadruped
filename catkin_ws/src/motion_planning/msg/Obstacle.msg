@@ -1,2 +1,0 @@
-string current
-string past
