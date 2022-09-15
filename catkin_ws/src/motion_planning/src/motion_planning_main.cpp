@@ -27,10 +27,6 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "motion_planning_main"); // make Anonymous with ros::init_options::AnonymousName
     ros::NodeHandle nh;
 
-    // init
-    Obstacle::arr.at(0) = Position::NONE;
-    Obstacle::arr.at(1) = Position::NONE;
-
     // get laserdata every loop
     sub = nh.subscribe("/scan", // topicname 
                         1000,   // buffer
@@ -57,6 +53,10 @@ void callback_laser_data(const sensor_msgs::LaserScan &msg){
     int alpha = 15; // can be higher resolution than python file because faster proccessed
     int step = (n*alpha)/360;
     
+    // reset
+    Obstacle::arr.at(0) = Position::NONE;
+    Obstacle::arr.at(1) = Position::NONE;
+
     // back
     for (int i=(3*n); i<(5*n); i+=step){
         if ((msg.ranges[i] < radius) && (Obstacle::arr.at(0) != Position::BACK)){
@@ -92,17 +92,67 @@ void callback_laser_data(const sensor_msgs::LaserScan &msg){
             Obstacle::arr.at(0) = Position::FRONT;
         }
     }
-    ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
+
+    //debug
+    //ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
 }
 
 // callback function returns True if service was called, and assignes values to response
 bool give_direction(motion_planning::Direction::Request &req, motion_planning::Direction::Response &res){
-
-    // full front
-    /*
-    if (obstacle == Obstacle::FRONT{
-
-    }*/
     
+    // debug
+    ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
+    
+    // obstacle front & left
+    if ((Obstacle::arr.at(0) == Position::FRONT) && (Obstacle::arr.at(1) == Position::LEFT)){
+        // turn right
+        res.dir = "turn";
+        res.ang = -60;
+        res.vec = {0, 0, 0};
+    } 
+    // obstacle front & right
+    else if ((Obstacle::arr.at(0) == Position::FRONT) && (Obstacle::arr.at(1) == Position::RIGHT)){
+        // turn left
+        res.dir = "turn";
+        res.ang = 60;
+        res.vec = {0, 0, 0};
+    } 
+    // obstacle front
+    else if (Obstacle::arr.at(0) == Position::FRONT){
+        // turn left
+        res.dir = "turn";
+        res.ang = 60;
+        res.vec = {0, 0, 0};
+    }
+    //obstacle right & left
+    else if ((Obstacle::arr.at(0) == Position::LEFT) && (Obstacle::arr.at(1) == Position::RIGHT)){ // Attention left is privileged over right and will always take arr[0]
+        // forward
+        res.dir = "step";
+        res.ang = 0;
+        res.vec = {1, 0, 0};
+    }
+    // obstacle right
+    else if (Obstacle::arr.at(0) == Position::RIGHT){
+        // step left
+        res.dir = "step";
+        res.ang = 0;
+        res.vec = {0, 1, 0};
+    } 
+    // obstacle left
+    else if (Obstacle::arr.at(0) == Position::LEFT){
+        // step right
+        res.dir = "step";
+        res.ang = 0;
+        res.vec = {0, -1, 0};
+    }
+    // no obstacle ahead
+    else {
+        // forward
+        res.dir = "step";
+        res.ang = 0;
+        res.vec = {1, 0, 0};
+    }
+    // debug
+    ROS_INFO("direction: %s", res.dir.c_str());
     return true;
 }
