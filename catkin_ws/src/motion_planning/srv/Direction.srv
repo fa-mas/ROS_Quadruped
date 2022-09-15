@@ -1,5 +1,5 @@
 bool ready
 ---
-string direction
-float32 angle
-float32[3] vector
+string dir
+float32 ang
+float32[3] vec
