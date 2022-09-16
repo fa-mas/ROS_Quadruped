@@ -1,0 +1,9 @@
+Adafruit-Blinka
+adafruit-circuitpython-ads1x15
+adafruit-circuitpython-busdevice
+adafruit-circuitpython-motor
+adafruit-circuitpython-pca9685
+adafruit-circuitpython-register
+adafruit-circuitpython-servokit
+Adafruit-PlatformDetect
+Adafruit-PureIO

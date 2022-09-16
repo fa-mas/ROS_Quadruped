@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>hw_ctrl</name>
+  <name>quad_pkg</name>
   <version>0.0.0</version>
-  <description>The hw_ctrl package</description>
+  <description>The quad_pkg package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/hw_ctrl</url> -->
+  <!-- <url type="website">http://wiki.ros.org/quad_pkg</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -49,21 +49,10 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  
   <build_depend>rospy</build_depend>
-  <build_depend>motion_planning</build_depend>
-
   <build_export_depend>rospy</build_export_depend>
-
   <exec_depend>rospy</exec_depend>
-  <exec_depend>motion_planning</exec_depend>
-  <exec_depend>quad_pkg</exec_depend>
-  <exec_depend>numpy</exec_depend>
-  <exec_depend>RPi</exec_depend>
-  <exec_depend>busio</exec_depend>
-  <exec_depend>board</exec_depend>
-  <exec_depend>adafruit_servokit</exec_depend>
-  
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
