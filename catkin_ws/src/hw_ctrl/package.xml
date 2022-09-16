@@ -59,7 +59,6 @@
   <exec_depend>motion_planning</exec_depend>
   <exec_depend>quad_pkg</exec_depend>
   <exec_depend>numpy</exec_depend>
-  <exec_depend>RPi</exec_depend>
   <exec_depend>busio</exec_depend>
   <exec_depend>board</exec_depend>
   <exec_depend>adafruit_servokit</exec_depend>

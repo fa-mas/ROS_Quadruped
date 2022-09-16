@@ -4,7 +4,7 @@ import rospy
 from motion_planning.srv import Direction
 
 from numpy import array as arr
-import RPi.GPIO as GPIO
+from math import floor
 import quad_pkg.motion as QM
 import quad_pkg.config as config
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     rospy.wait_for_service("/direction") # will block until service is started
 
     ### delete later
-    rate = rospy.Rate(10) # 10Hz loop
+    rate = rospy.Rate(5)
     ###
 
     config.setup()
@@ -99,6 +99,7 @@ if __name__ == "__main__":
     stepHeightCrawl = 50
     stepHeightTurn = 40
     stepHeightRun = 30
+    maxTurnAngle = 30
 
     try:# catch exception
         # create client
@@ -108,12 +109,20 @@ if __name__ == "__main__":
         while not rospy.is_shutdown():
             response = direction(True) # this function calls the service and returns the response
             rospy.loginfo("Response: " + str(response.dir) + str(response.ang) + str(response.vec))
+            
+            x, y, z = response.vec[0], response.vec[1], response.vec[2]
+            vec = arr([x, y, z])
 
-            # if bla: Circle crawl usw...
-
-            ### delete later
+            if response.dir == "step":
+                Quad.CircleCrawlFs(vec, nInc, stepHeightCrawl)
+            elif response.dir == "turn":
+                n = floor(abs(response.ang)/maxTurnAngle)
+                for i in range(0,n):
+                    Quad.WholeTurn(maxTurnAngle, stepHeightTurn, nInc)
+            else:
+                pass
+            
             rate.sleep()
-            ###
 
     except rospy.ServiceException as e:
         rospy.logwarn("Service failed: " + str(e))

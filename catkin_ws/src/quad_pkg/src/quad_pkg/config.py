@@ -24,3 +24,4 @@ def setup():
     kit.frequency = 50
     for i in range(2,16):
         kit.servo[i].set_pulse_width_range(500, 2500)
+        
