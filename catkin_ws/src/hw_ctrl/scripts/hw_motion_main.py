@@ -7,8 +7,6 @@ from numpy import array as arr
 import RPi.GPIO as GPIO
 import quad_pkg.motion as QM
 import quad_pkg.config as config
-import sys
-import time
 
 if __name__ == "__main__":
     rospy.init_node("hw_motion_main") 

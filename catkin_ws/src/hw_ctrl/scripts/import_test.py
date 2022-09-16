@@ -16,13 +16,6 @@ import quad_pkg.motion as motion
 if __name__ == '__main__':
     rospy.init_node('import_test')
 
-    # motion module
-    motion.say_hi()
-    motion.array
-
-    # config module
-    say_hi2()
-
     # numpy
     numpy.array([5, 4, 3])
 
@@ -36,6 +29,6 @@ if __name__ == '__main__':
     # core
     time.sleep(1)
 
-    
+
 
     rospy.loginfo("done")
