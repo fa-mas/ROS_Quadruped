@@ -97,8 +97,8 @@ void callback_laser_data(const sensor_msgs::LaserScan &msg){
         }
     }
 
-    //debug
-    //ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
+    // debug
+    // ROS_INFO("obstacle: %i, %i", static_cast<int> (Obstacle::arr.at(0)), static_cast<int> (Obstacle::arr.at(1)));
 }
 
 // service callback function returns true if service was called, and assignes values to response
@@ -163,6 +163,7 @@ void avoid_obstacle(motion_planning::Direction::Response &res){
         res.ang = 0;
         res.vec = {0, -75, 0};
     }
+    ROS_INFO("res ang: %f", res.ang);
 }
 
 //void get_user_input(motion_planning::Direction::Response &res){ // alters /direction response depending on user input

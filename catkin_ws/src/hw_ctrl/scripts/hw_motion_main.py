@@ -115,8 +115,16 @@ if __name__ == "__main__":
 
             if response.dir == "step":
                 Quad.CircleCrawlFs(vec, nInc, stepHeightCrawl)
-            elif response.dir == "turn":
+            elif (response.dir == "turn") and (response.ang > 0):
                 n = floor(abs(response.ang)/maxTurnAngle)
+                # debug
+                # print(response.ang)
+                for i in range(0,n):
+                    Quad.WholeTurn(-maxTurnAngle, stepHeightTurn, nInc)
+            elif (response.dir == "turn") and (response.ang < 0):
+                n = floor(abs(response.ang)/maxTurnAngle)
+                # debug
+                # print(response.ang)
                 for i in range(0,n):
                     Quad.WholeTurn(maxTurnAngle, stepHeightTurn, nInc)
             else:

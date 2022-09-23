@@ -373,7 +373,7 @@ class Quadruped:
         self.legC.GoToInit()
         self.legD.GoToInit()
         self.ServoFeed()
-        print('Slow cross-crawl started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
+        # print('Slow cross-crawl started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
 
         # COM shift 1
         incSum = arr([0, 0, 0])
@@ -465,7 +465,7 @@ class Quadruped:
             # FEED SERVOS
             self.ServoFeed()
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
 
         # return to initial position (deviation because of machine precision)
         self.legA.GoToInit()
@@ -473,7 +473,7 @@ class Quadruped:
         self.legC.GoToInit()
         self.legD.GoToInit()
         self.ServoFeed()
-        print('Slow cross-crawl finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
+        # print('Slow cross-crawl finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
 
     def CrossCrawlFs(self, vInpTot, nInc, stepHeight):
 
@@ -547,7 +547,7 @@ class Quadruped:
         self.legC.GoToInit()
         self.legD.GoToInit()
         self.ServoFeed()
-        print('Fast cross-crawl started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
+        # print('Fast cross-crawl started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
 
         ratio = 5   # COM vector will be executed until distance (1/ratio)*c (measured from diagonal) is reached before step is started
                     # alter if COM shift not proper (the smaller "ratio" the safer the stand, the slower the movement)
@@ -651,7 +651,7 @@ class Quadruped:
         self.legC.GoToInit()
         self.legD.GoToInit()
         self.ServoFeed()
-        print('Fast cross-crawl finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
+        # print('Fast cross-crawl finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
 
     def CircleCrawlFs(self, vInpTot, nInc, stepHeight):
 
@@ -721,7 +721,7 @@ class Quadruped:
         c5Len = la.norm(c5)
 
         # START MOVEMENT
-        print('Fast circle-crawl started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
+        # print('Fast circle-crawl started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
 
         ratio = 5   # COM vector will be executed until distance (1/ratio)*c (measured from diagonal) is reached before step is started
                     # alter if COM shift not proper (the smaller "ratio" the safer the stand, the slower the movement)
@@ -835,7 +835,7 @@ class Quadruped:
             incSumLenC = la.norm(incSumC)
             self.ServoFeed()
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
 
         # return to initial position (deviation because of machine precision)
         self.legA.GoToInit()
@@ -843,7 +843,7 @@ class Quadruped:
         self.legC.GoToInit()
         self.legD.GoToInit()
         self.ServoFeed()
-        print('Fast circle-crawl finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
+        # print('Fast circle-crawl finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
 
     def Run2x2Interm(self, vInpTot, nInc, stepHeight): 
 
@@ -868,7 +868,7 @@ class Quadruped:
         stepLen = la.norm(vInpTot)
 
         # COM SHIFT AND STEP1
-        print("Run2x2 interm")
+        # print("Run2x2 interm")
         incSumS1 = arr([0, 0, 0])
         incSumS2 = arr([0, 0, 0])
         incSumLenS = la.norm(incSumS1)
@@ -898,7 +898,7 @@ class Quadruped:
             incSumLenS = la.norm(incSumS1)
             self.ServoFeed()
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
 
     def Run2x2IntermExp(self, vInpTot, nInc, stepHeight): # experimental
 
@@ -932,7 +932,7 @@ class Quadruped:
             c2 = arr([ 0.5*vInpTotLen,        -0.5*vInpTotLen,     (1/2)*vInpTot[2]])
 
         else: 
-            print('\n\nInputvectors for steps can either have x&z- or y&z-components, not x&y (one must be 0)\n\n')
+            # print('\n\nInputvectors for steps can either have x&z- or y&z-components, not x&y (one must be 0)\n\n')
             return 0
 
         # legLen modification for smoother movement (values found by testing)
@@ -953,7 +953,7 @@ class Quadruped:
         stepLen = la.norm(stepVec)
 
         # COM SHIFT AND STEP1
-        print("Run2x2 interm")
+        # print("Run2x2 interm")
         incSumS1 = arr([0, 0, 0])
         incSumS2 = arr([0, 0, 0])
         incSumLenS = la.norm(incSumS1)
@@ -968,8 +968,8 @@ class Quadruped:
             incSumLenS = la.norm(incSumS1)
             self.ServoFeed()
 
-        print("COM VECTORS: ", c1, incSumC)
-        print("STEP VECTORS: ", stepVec, incSumS1, incSumS2)
+        # print("COM VECTORS: ", c1, incSumC)
+        # print("STEP VECTORS: ", stepVec, incSumS1, incSumS2)
 
         # COM SHIFT AND STEP2
         incSumS1 = arr([0, 0, 0])
@@ -986,10 +986,10 @@ class Quadruped:
             incSumLenS = la.norm(incSumS1)
             self.ServoFeed()
         
-        print("COM VECTORS: ", c1, incSumC)
-        print("STEP VECTORS: ", stepVec, incSumS1, incSumS2)
+        # print("COM VECTORS: ", c1, incSumC)
+        # print("STEP VECTORS: ", stepVec, incSumS1, incSumS2)
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
 
     def Run2x2Init(self, vInpTot, nInc, stepHeight):
 
@@ -1013,7 +1013,7 @@ class Quadruped:
         stepLen = la.norm(stepVec)
 
         # STEP1
-        print("Run2x2 init")
+        # print("Run2x2 init")
         incSumS1 = arr([0, 0, 0])
         incSumS2 = arr([0, 0, 0])
         incSumLenS = la.norm(incSumS1)
@@ -1026,7 +1026,7 @@ class Quadruped:
             incSumLenS = la.norm(incSumS1)
             self.ServoFeed()
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
     
     def Run2x2Term(self, vInpTot, nInc, stepHeight):
 
@@ -1051,7 +1051,7 @@ class Quadruped:
         stepLen = la.norm(stepVec)
 
         # COM SHIFT AND STEP1
-        print("Run2x2 term")
+        # print("Run2x2 term")
         incSumS1 = arr([0, 0, 0])
         incSumS2 = arr([0, 0, 0])
         incSumLenS = la.norm(incSumS1)
@@ -1067,7 +1067,7 @@ class Quadruped:
             incSumLenS = la.norm(incSumS1)
             self.ServoFeed()
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
 
         # return to initial position (deviation because of machine precision)
         self.legA.GoToInit()
@@ -1082,21 +1082,21 @@ class Quadruped:
         stepVec = dest/(la.norm(dest))*stepLen
         n = floor(la.norm(dest)/stepLen)
 
-        print('Run2x2 started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
+        # print('Run2x2 started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
 
         self.Run2x2Init(stepVec, nInc, stepHeight)
         for i in range((n-1)):
             self.Run2x2Interm(stepVec, nInc, stepHeight)
         self.Run2x2Term(stepVec, nInc, stepHeight)
         
-        print('Run2x2 finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
+        # print('Run2x2 finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
 
     def BodyTurn(self, totAngle, nInc):
 
         incSum = 0
         incAngle = np.deg2rad(totAngle/nInc)
 
-        print('Body turn started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
+        # print('Body turn started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
 
         while abs(incSum) < abs(np.deg2rad(totAngle)): # while sum of increments < total angle
 
@@ -1117,8 +1117,8 @@ class Quadruped:
             # feed servos
             self.ServoFeed()
 
-        print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
-        print('Body turn finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
+        # print('angles:', self.legA.alpha, self.legA.beta, self.legA.gamma)
+        # print('Body turn finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
 
     def WholeTurn(self, totAngle, stepHeight, nInc):
         
@@ -1190,7 +1190,7 @@ class Quadruped:
         else:
             return 0
 
-        print('Whole turn started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
+        # print('Whole turn started, initial Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr, )
         
         for i in range(0,4):
 
@@ -1229,16 +1229,16 @@ class Quadruped:
 
         self.ServoFeed()
 
-        print('Whole turn finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
+        # print('Whole turn finished, current Vectors:', self.legA.vCurr, self.legB.vCurr, self.legC.vCurr, self.legD.vCurr,'\n' )
 
 def AngleOutOfRange(angle, minVal, maxVal): 
     """check if angle out of range, return 1 for too big, -1 for too small, 0 for in range"""
     result = 0
     if angle <= minVal:
-        print('angle too small:', angle)
+        # print('angle too small:', angle)
         return [-1, minVal, maxVal]
     elif angle >= maxVal:
-        print('angle too big:', angle)
+        # print('angle too big:', angle)
         return [1, minVal, maxVal]
     else:
         return [0, minVal, maxVal]
