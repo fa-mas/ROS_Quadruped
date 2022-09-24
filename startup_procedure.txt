@@ -1,0 +1,14 @@
+1. source all Terminals:
+    source devel/setup.bash
+
+2. start master:
+    roscore
+
+3. launch lidar:
+    roslaunch rplidar_ros rplidar.launch
+
+4. run motion_planning:
+    rosrun motion_planning motion_planning_main
+
+5. run hw_ctrl:
+    rosrun hw_ctrl hw_motion_main.py
