@@ -41,7 +41,7 @@ motion_planning_main.cpp subscribes to /scan from Lidar, processes the received 
 hw_motion_main.py subscribes to /direction and uses quad_pkg to control the physical Legs and move the Robot towards the desired direction. 
 (To Do: move geometry constants to quad_pkg/config.py)
 
->[!INFO]
+>**Note:**
 >Please note that this Repository is a work in progress and serves as place to take notes, it is not intended to be cloned. However if you are interested in building a similar project and have questions, don't hesitate to contact me.
 
 
