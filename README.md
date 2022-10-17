@@ -22,11 +22,11 @@ Contains shared objects which are used in multiple files and a setup function fo
 (To Do: define geometry constats which are currently defined in hw_ctrl/hw_motion_main.py)
 #### 2.1.2 motion.py
 Contains class "Leg" and "Quadruped" which are used to compute the angles of each joint of every leg. 
-##### Leg methods:
+\t##### Leg methods:
 - Vectorgeometry to calculate angles of joints.
-##### Quadruped methods:
-- Combine all 4 Legs
-- define Movement patterns
+\t##### Quadruped methods:
+- Combine and coordinate Legs of Robot
+- Movement patterns
 
 ### 2.2 rplidar_ros
 The Lidar is used to detect obstacles around the Robot. The information gained from the Lidar is published by rplidar_ros/node.cpp to /scan. Slamtec provides a ROS package to drive their RPLidar A1. (https://github.com/Slamtec/rplidar_ros)
