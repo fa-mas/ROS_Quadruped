@@ -1,7 +1,7 @@
 # ROS_Quadruped
 
 Repository to control a Quadruped Robot build on a Raspberry Pi 3B+.
-
+![text](media_files/20221017_184835.gif)
 
 ### Main Components
 - Raspberry Pi 3B+ (https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
