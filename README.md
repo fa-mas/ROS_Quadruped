@@ -42,8 +42,4 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 (To Do: move geometry constants to quad_pkg/config.py)
 
 >**Note:**
->Please note that this Repository is a work in progress and serves as place to take notes, it is not intended to be cloned. However if you are interested in building a similar project and have questions, don't hesitate to contact me.
-
-
-
- 
+>This Repository is a work in progress and serves as a place to take notes, it is not intended to be cloned. However if you are interested in the project and have questions, don't hesitate to contact me.
