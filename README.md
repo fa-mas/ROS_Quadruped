@@ -22,9 +22,9 @@ Contains shared objects which are used in multiple files and a setup function fo
 (To Do: define geometry constats which are currently defined in hw_ctrl/hw_motion_main.py)
 #### 2.1.2 motion.py
 Contains class "Leg" and "Quadruped" which are used to compute the angles of each joint of every leg. 
-\t##### Leg methods:
+##### Leg methods:
 - Vectorgeometry to calculate angles of joints.
-\t##### Quadruped methods:
+##### Quadruped methods:
 - Combine and coordinate Legs of Robot
 - Movement patterns
 
