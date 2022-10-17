@@ -5,6 +5,11 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 |:--:|
 |<b>Crawl Pattern</b>|
 
+
+>**Note:**
+>This Repository is a work in progress and serves as a place to take notes, it is not intended to be cloned. However if you are interested in the project and have questions, don't hesitate to contact me.
+
+
 ## 1. Main Components
 - Raspberry Pi 3B+ (https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
 - RDS3225 Servos (or similar) 
@@ -40,6 +45,3 @@ motion_planning_main.cpp subscribes to /scan from Lidar, processes the received 
 ### 2.4 hw_ctrl
 hw_motion_main.py subscribes to /direction and uses quad_pkg to control the physical Legs and move the Robot towards the desired direction. 
 (To Do: move geometry constants to quad_pkg/config.py)
-
->**Note:**
->This Repository is a work in progress and serves as a place to take notes, it is not intended to be cloned. However if you are interested in the project and have questions, don't hesitate to contact me.
