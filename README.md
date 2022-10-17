@@ -15,11 +15,9 @@ Repository to control a Quadruped Robot with ROS Noetic build on a Raspberry Pi 
 
 ### Ros Packages
 ##### rplidar_ros
-The Lidar is used to detect obstacles around the Robot. The information gained from the Lidar is published by rplidar_ros to /scan and processed by motion_planning to avoid obstacles.
+The Lidar is used to detect obstacles around the Robot. The information gained from the Lidar is published by rplidar_ros to /scan and processed by motion_planning to avoid obstacles. Slamtec provides a ROS package to drive their RPLidar A1. (https://github.com/Slamtec/rplidar_ros)
 ![](media_files/20221017_184533.gif)
 |:--:|
 |<b>Obstacle avoidance with Lidar (sped up)</b>|
-
-Slamtec provides a ROS package to drive their RPLidar A1. (https://github.com/Slamtec/rplidar_ros)
 
 ##### 
