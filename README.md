@@ -1,9 +1,13 @@
 # ROS_Quadruped
 
-Repository to control a Quadruped Robot build on a Raspberry Pi 3B+.
+Repository to control a Quadruped Robot with ROS Noetic build on a Raspberry Pi 3B+.
 ![](media_files/20221017_184835.gif)
 |:--:|
 |<b>Crawl Pattern</b>|
+
+![](media_files/20221017_184533.gif)
+|:--:|
+|<b>Obstacle avoidance with LIDAR (sped up)</b>|
 
 ### Main Components
 - Raspberry Pi 3B+ (https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
