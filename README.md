@@ -19,6 +19,7 @@ The Lidar is used to detect obstacles around the Robot. The information gained f
 ![](media_files/20221017_184533.gif)
 |:--:|
 |<b>Obstacle avoidance with Lidar (sped up)</b>|
+
 Slamtec provides a ROS package to drive their RPLidar A1. (https://github.com/Slamtec/rplidar_ros)
 
 ##### 
