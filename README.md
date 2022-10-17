@@ -3,7 +3,7 @@
 Repository to control a Quadruped Robot build on a Raspberry Pi 3B+.
 ![](media_files/20221017_184835.gif)
 |:--:|
-|<b>Image Credits - Fig.2 - 4K Mountains Wallpaper</b>|
+|<b>Crawl Pattern</b>|
 
 ### Main Components
 - Raspberry Pi 3B+ (https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
