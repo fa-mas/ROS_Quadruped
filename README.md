@@ -21,10 +21,11 @@ Imported by hw_motion_main.py to calculate angles
 Contains shared objects which are used in multiple files and a setup function for I2C- and PCA Objects (I2C: Communication protocol between RPi & Servo driver, PCA: Servo driver).
 (To Do: define geometry constats which are currently defined in hw_ctrl/hw_motion_main.py)
 #### motion.py
-**This is where the magic happens**
 Contains class "Leg" and "Quadruped" which are used to compute the angles of each joint of every leg. 
-**Leg methods:** Vectorgeometry to calculate angles of joints.
-**Quadruped methods:** - Combine all 4 Legs
+**Leg methods:** 
+- Vectorgeometry to calculate angles of joints.
+**Quadruped methods:** 
+- Combine all 4 Legs
 - define Movement patterns
 
 ### rplidar_ros
