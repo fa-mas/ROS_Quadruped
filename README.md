@@ -10,7 +10,7 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 >This Repository is a work in progress and serves as a place to take notes, it is not intended to be cloned. Readability and structure of the code need to be improved. However if you are interested in the project and have questions, don't hesitate to contact me.
 
 
-## 1. Main Components
+## 1. Main Hardware Components
 - Raspberry Pi 3B+ (https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
 - RDS3225 Servos (or similar) 
 - Adafruits PCA9685 Servo Driver (https://www.adafruit.com/product/815)
