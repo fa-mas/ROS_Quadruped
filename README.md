@@ -45,3 +45,10 @@ motion_planning_main.cpp subscribes to /scan from Lidar, processes the received 
 ### 2.4 hw_ctrl
 hw_motion_main.py subscribes to /direction and uses quad_pkg to control the physical Legs and move the Robot towards the desired direction. 
 (To Do: move geometry constants to quad_pkg/config.py)
+
+## 3. Startup Procedure 
+1. source all Terminals:  `source devel/setup.bash`
+2. start master:          `roscore`
+3. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
+4. run motion_planning:   `rosrun motion_planning motion_planning_main`
+5. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
