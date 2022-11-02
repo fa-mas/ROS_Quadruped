@@ -52,3 +52,22 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 3. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
 4. run motion_planning:   `rosrun motion_planning motion_planning_main`
 5. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
+
+## 4. Wiring
+'''
+        config.kit.servo[2].angle = limitAngle(self.legA.alphaCorr, minAngle, maxAngle)
+        config.kit.servo[3].angle = limitAngle(self.legA.betaCorr, minAngle, maxAngle)
+        config.kit.servo[4].angle = limitAngle(self.legA.gammaCorr, minAngle, maxAngle)
+
+        config.kit.servo[5].angle = limitAngle(self.legB.alphaCorr, minAngle, maxAngle)
+        config.kit.servo[6].angle = limitAngle(self.legB.betaCorr, minAngle, maxAngle)
+        config.kit.servo[7].angle = limitAngle(self.legB.gammaCorr, minAngle, maxAngle)
+
+        config.kit.servo[8].angle = limitAngle(self.legC.alphaCorr, minAngle, maxAngle)
+        config.kit.servo[9].angle = limitAngle(self.legC.betaCorr, minAngle, maxAngle)
+        config.kit.servo[10].angle = limitAngle(self.legC.gammaCorr, minAngle, maxAngle)
+
+        config.kit.servo[11].angle = limitAngle(self.legD.alphaCorr, minAngle, maxAngle)
+        config.kit.servo[12].angle = limitAngle(self.legD.betaCorr, minAngle, maxAngle)
+        config.kit.servo[13].angle = limitAngle(self.legD.gammaCorr, minAngle, maxAngle)
+        '''
