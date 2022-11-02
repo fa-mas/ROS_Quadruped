@@ -56,6 +56,7 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 ## 4. Wiring
 
 Connect Servos to Servo Driver:
+```     
         config.kit.servo[2].angle = limitAngle(self.legA.alphaCorr, minAngle, maxAngle)
         config.kit.servo[3].angle = limitAngle(self.legA.betaCorr, minAngle, maxAngle)
         config.kit.servo[4].angle = limitAngle(self.legA.gammaCorr, minAngle, maxAngle)
@@ -71,3 +72,4 @@ Connect Servos to Servo Driver:
         config.kit.servo[11].angle = limitAngle(self.legD.alphaCorr, minAngle, maxAngle)
         config.kit.servo[12].angle = limitAngle(self.legD.betaCorr, minAngle, maxAngle)
         config.kit.servo[13].angle = limitAngle(self.legD.gammaCorr, minAngle, maxAngle)
+```
