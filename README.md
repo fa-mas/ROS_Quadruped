@@ -53,7 +53,11 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 4. run motion_planning:   `rosrun motion_planning motion_planning_main`
 5. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
-## 4. Wiring
+## 4. Mechanics and Geometry
+![](media_files/Top_view.jpeg)
+|:--:|
+
+## 5. Wiring
 
 Connect Servos to Servo Driver:
 ```     
