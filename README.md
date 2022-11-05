@@ -56,6 +56,10 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 ## 4. Mechanics and Geometry
 ![](media_files/Top_view.jpeg)
 |:--:|
+|<b>Top View</b>|
+![](media_files/Perspective_view.jpeg)
+|:--:|
+|<b>Perspective View</b>|
 
 ## 5. Wiring
 
