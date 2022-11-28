@@ -53,6 +53,9 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 4. run motion_planning:   `rosrun motion_planning motion_planning_main`
 5. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
+6. start cam (source: /dev/video0):             
+        `rosrun video_stream_opencv video_stream_publisher <0>`
+
 ## 4. Mechanics and Geometry
 ![](media_files/Top_view.jpeg)
 |:--:|
