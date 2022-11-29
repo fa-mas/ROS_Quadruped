@@ -28,10 +28,10 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 7. Clone Repo: https://github.com/Slamtec/rplidar_ros/tree/b1df5d7695b20a3e595ad6c47e3dd44f983e1227
 8. Navigate to ROS_Quadruped/catkin_ws and make: `catkin_make -j1`
 9. Navigate to ROS_Quadruped/catkin_ws/src/video_stream_opencv/launch
-10. Edit `webcam.launch`: `<arg name="set_camera_fps" value="20"/>`  
-                          `<arg name="fps" value="20" />`
-                          (reduce fps to make robot faster)
-                          
+10. Reduce webcam fps to make robot faster:  
+    Edit `webcam.launch`:  
+    `<arg name="set_camera_fps" value="20"/>`  
+    `<arg name="fps" value="20" />`     
 
 ## 3. Ros Packages
 
@@ -60,6 +60,9 @@ motion_planning_main.cpp subscribes to /scan from Lidar, processes the received 
 ### 3.4 hw_ctrl
 hw_motion_main.py subscribes to /direction and uses quad_pkg to control the physical Legs and move the Robot towards the desired direction. 
 (To Do: move geometry constants to quad_pkg/config.py)
+
+### 3.5 video_stream_opencv
+The webcam images are published to webcam/image_raw via video_stream_opencv, a package to drive webcams with opencv: https://github.com/ros-drivers/video_stream_opencv
 
 ## 4. Startup Procedure 
 ##### on remote machine:
