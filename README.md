@@ -56,6 +56,9 @@ on remote machine:
 6. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
 ### 3.1 View Data in Rviz
+![](media_files/)
+|:--:|
+|<b>Rviz</b>|
 (0. export ROS_MASTER_URI & ROS_IP on both, local and remote machine, 
 if not already defined in ~.bashrc)
 on local machine:
