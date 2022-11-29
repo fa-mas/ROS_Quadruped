@@ -47,14 +47,25 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 (To Do: move geometry constants to quad_pkg/config.py)
 
 ## 3. Startup Procedure 
+on remote machine:
 1. source all Terminals:  `source devel/setup.bash`
 2. start master:          `roscore`
 3. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
-4. run motion_planning:   `rosrun motion_planning motion_planning_main`
-5. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
+4. launch webcam          `roslaunch video_stream_opencv webcam.launch`
+5. run motion_planning:   `rosrun motion_planning motion_planning_main`
+6. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
-6. start cam (source: /dev/video0):             
-        `rosrun video_stream_opencv video_stream_publisher <0>`
+### 3.1 View Data in Rviz
+(0. export ROS_MASTER_URI & ROS_IP on both, local and remote machine, 
+if not already defined in ~.bashrc)
+on local machine:
+1. test connection:     `rostopic list`
+2. start rviz:          `rviz rviz`
+3. Add Image:           "Add" > "Image"
+   subscribe to topic:  "Image" > "Image Topic" > "/webcam/image_raw"
+4. Add LaserScan:       "Add" > "LaserScan"
+   subscribe to topic:  "LaserScan" > "Topic" > "/scan"
+   change fixed frame:  "Global Options" > "Fixed Frame" > "/laser"
 
 ## 4. Mechanics and Geometry
 ![](media_files/Top_view.jpeg)
