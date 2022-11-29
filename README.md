@@ -47,7 +47,7 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 (To Do: move geometry constants to quad_pkg/config.py)
 
 ## 3. Startup Procedure 
-on remote machine:
+##### on remote machine:
 1. source all Terminals:  `source devel/setup.bash`
 2. start master:          `roscore`
 3. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
@@ -60,9 +60,9 @@ on remote machine:
 |:--:|
 |<b>Rviz</b>|
 
-(0. export ROS_MASTER_URI & ROS_IP on both, local and remote machine, 
-if not already defined in ~.bashrc)
-on local machine:
+0. (export ROS_MASTER_URI & ROS_IP on both, local and remote machine,  
+   if not already defined in ~.bashrc, see also: http://wiki.ros.org/ROS/Tutorials/MultipleMachines)  
+##### on local machine:
 1. test connection:     `rostopic list`
 2. start rviz:          `rviz rviz`
 3. Add Image:           "Add" > "Image"  
