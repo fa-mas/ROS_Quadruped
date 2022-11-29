@@ -19,21 +19,28 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 - Waveshare UPS HAT (Powersupply RPi, https://www.waveshare.com/wiki/UPS_HAT)
 
 ## 2. Get Started
-1. Flash Ubuntu 20.04 on sd and run on RPi
+1. Flash Ubuntu 20.04 on SD and run on RPi
 2. Install ROS Noetic
 3. Clone Repo: `git clone <ROS_Quadruped>` 
 4. Navigate to ROS_Quadruped/catkin_ws and make: `catkin_make -j2`  
-5. Navigate to ROS_Quadruped/catkin_ws/src and clone Repo: https://github.com/ros-drivers/video_stream_opencv
-6. Clone Repo: 
+5. Navigate to ROS_Quadruped/catkin_ws/src  
+6. Clone Repo: https://github.com/ros-drivers/video_stream_opencv
+7. Clone Repo: https://github.com/Slamtec/rplidar_ros/tree/b1df5d7695b20a3e595ad6c47e3dd44f983e1227
+8. Navigate to ROS_Quadruped/catkin_ws and make: `catkin_make -j1`
+9. Navigate to ROS_Quadruped/catkin_ws/src/video_stream_opencv/launch
+10. Edit `webcam.launch`: `<arg name="set_camera_fps" value="20"/>`  
+                          `<arg name="fps" value="20" />`
+                          (reduce fps to make robot faster)
+                          
 
-## 2. Ros Packages
+## 3. Ros Packages
 
-### 2.1 quad_pkg
+### 3.1 quad_pkg
 Imported by hw_motion_main.py to calculate angles for each Leg.
-#### 2.1.1 config.py
+#### 3.1.1 config.py
 Contains shared objects which are used in multiple files and a setup function for I2C- and PCA Objects (I2C: Communication protocol between RPi & Servo driver, PCA: Servo driver).
 (To Do: define geometry constats which are currently defined in hw_ctrl/hw_motion_main.py)
-#### 2.1.2 motion.py
+#### 3.1.2 motion.py
 Contains class "Leg" and "Quadruped" which are used to compute the angles of each joint of every leg. 
 ##### Leg methods:
 - Vectorgeometry to calculate angles of joints.
@@ -41,20 +48,20 @@ Contains class "Leg" and "Quadruped" which are used to compute the angles of eac
 - Combine and coordinate Legs of Robot
 - Movement patterns
 
-### 2.2 rplidar_ros
+### 3.2 rplidar_ros
 The Lidar is used to detect obstacles around the Robot. The information gained from the Lidar is published by rplidar_ros/node.cpp to /scan. Slamtec provides a ROS package to drive their RPLidar A1. (https://github.com/Slamtec/rplidar_ros)
 ![](media_files/20221017_184533.gif)
 |:--:|
 |<b>Obstacle avoidance with Lidar (sped up)</b>|
 
-### 2.3 motion_planning
+### 3.3 motion_planning
 motion_planning_main.cpp subscribes to /scan from Lidar, processes the received information to avoid obstacles and publishes to /direction. Default direction is forward.
 
-### 2.4 hw_ctrl
+### 3.4 hw_ctrl
 hw_motion_main.py subscribes to /direction and uses quad_pkg to control the physical Legs and move the Robot towards the desired direction. 
 (To Do: move geometry constants to quad_pkg/config.py)
 
-## 3. Startup Procedure 
+## 4. Startup Procedure 
 ##### on remote machine:
 1. source all Terminals:  `source devel/setup.bash`
 2. start master:          `roscore`
@@ -63,7 +70,7 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 5. run motion_planning:   `rosrun motion_planning motion_planning_main`
 6. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
-### 3.1 View Data in Rviz
+### 4.1 View Data in Rviz
 ![](media_files/Screenshot.jpeg)
 |:--:|
 |<b>Rviz</b>|
@@ -79,7 +86,7 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
    subscribe to topic:  "LaserScan" > "Topic" > "/scan"  
    change fixed frame:  "Global Options" > "Fixed Frame" > "/laser"
 
-## 4. Mechanics and Geometry
+## 5. Mechanics and Geometry
 ![](media_files/Top_view.jpeg)
 |:--:|
 |<b>Top View</b>|
@@ -88,7 +95,7 @@ hw_motion_main.py subscribes to /direction and uses quad_pkg to control the phys
 |:--:|
 |<b>Perspective View</b>|
 
-## 5. Wiring
+## 6. Wiring
 
 Connect Servos to Servo Driver:
 ```     
