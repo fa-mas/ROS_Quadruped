@@ -56,7 +56,7 @@ on remote machine:
 6. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
 ### 3.1 View Data in Rviz
-![](media_files/Screenshot 2022-11-29 175003.jpeg)
+![](media_files/Screenshot.jpeg)
 |:--:|
 |<b>Rviz</b>|
 
