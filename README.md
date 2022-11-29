@@ -18,6 +18,14 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 - Batterypack 7.2V (Powersupply Servos)
 - Waveshare UPS HAT (Powersupply RPi, https://www.waveshare.com/wiki/UPS_HAT)
 
+## 2. Get Started
+1. Flash Ubuntu 20.04 on sd and run on RPi
+2. Install ROS Noetic
+3. Clone Repo: `git clone <ROS_Quadruped>` 
+4. Navigate to ROS_Quadruped/catkin_ws and make: `catkin_make -j2`  
+5. Navigate to ROS_Quadruped/catkin_ws/src and clone Repo: https://github.com/ros-drivers/video_stream_opencv
+6. Clone Repo: 
+
 ## 2. Ros Packages
 
 ### 2.1 quad_pkg
