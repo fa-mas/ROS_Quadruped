@@ -18,7 +18,7 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 - Batterypack 7.2V (Powersupply Servos)
 - Waveshare UPS HAT (Powersupply RPi, https://www.waveshare.com/wiki/UPS_HAT)
 
-## 2. Get Started
+## 2. Set up
 1. Flash Ubuntu 20.04 on SD and run on RPi
 2. Install ROS Noetic
 3. Clone Repo: `git clone <ROS_Quadruped>` 
@@ -31,7 +31,8 @@ Repository to control a Quadruped Robot via ROS Noetic on a Raspberry Pi.
 10. Reduce webcam fps to make robot faster:  
     Edit `webcam.launch`:  
     `<arg name="set_camera_fps" value="20"/>`  
-    `<arg name="fps" value="20" />`     
+    `<arg name="fps" value="20" />`  
+    
 
 ## 3. Ros Packages
 
