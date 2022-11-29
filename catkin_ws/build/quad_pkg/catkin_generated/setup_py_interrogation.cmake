@@ -1,0 +1,7 @@
+set(quad_pkg_SETUP_PY_SETUP_MODULE "distutils.core")
+set(quad_pkg_SETUP_PY_VERSION "0.0.0")
+set(quad_pkg_SETUP_PY_SCRIPTS "")
+set(quad_pkg_SETUP_PY_PACKAGES "quad_pkg")
+set(quad_pkg_SETUP_PY_PACKAGE_DIRS "src/quad_pkg")
+set(quad_pkg_SETUP_PY_MODULES "")
+set(quad_pkg_SETUP_PY_MODULE_DIRS "")

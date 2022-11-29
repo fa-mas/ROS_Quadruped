@@ -1,0 +1,8 @@
+prefix=/home/pi/Projects/ROS_Quadruped/catkin_ws/devel
+
+Name: quad_pkg
+Description: Description of quad_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+hw_ctrl:motion_planning:quad_pkg:rplidar_ros:video_stream_opencv
+-DCATKIN_DEVEL_PREFIX=/home/pi/Projects/ROS_Quadruped/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/pi/Projects/ROS_Quadruped/catkin_ws/install -G Unix Makefiles
