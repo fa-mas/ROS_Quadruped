@@ -59,6 +59,7 @@ on remote machine:
 ![](media_files/Screenshot 2022-11-29 175003.jpeg)
 |:--:|
 |<b>Rviz</b>|
+
 (0. export ROS_MASTER_URI & ROS_IP on both, local and remote machine, 
 if not already defined in ~.bashrc)
 on local machine:
