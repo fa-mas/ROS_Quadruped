@@ -62,10 +62,10 @@ on local machine:
 1. test connection:     `rostopic list`
 2. start rviz:          `rviz rviz`
 3. Add Image:           "Add" > "Image"
-   subscribe to topic:  "Image" > "Image Topic" > "/webcam/image_raw"
+   3.1 subscribe to topic:  "Image" > "Image Topic" > "/webcam/image_raw"
 4. Add LaserScan:       "Add" > "LaserScan"
-   subscribe to topic:  "LaserScan" > "Topic" > "/scan"
-   change fixed frame:  "Global Options" > "Fixed Frame" > "/laser"
+   4.1 subscribe to topic:  "LaserScan" > "Topic" > "/scan"
+   4.2 change fixed frame:  "Global Options" > "Fixed Frame" > "/laser"
 
 ## 4. Mechanics and Geometry
 ![](media_files/Top_view.jpeg)
