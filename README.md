@@ -67,15 +67,16 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 
 ## 4. Startup Procedure 
 1. start mobile hotspot
-2. start RPi
-3. check IP of RPi in hotspot settings (usually `192.168.150.113`)
-4. shh into RPi from local machine: `ssh pi@<IP>` (usually `ssh pi@192.168.150.113`) 
+2. connect local machine to hotspot
+3. start RPi
+4. check IP of RPi in hotspot settings (usually `192.168.150.113`)
+5. shh into RPi from local machine: `ssh pi@<IP>` (usually `ssh pi@192.168.150.113`) 
 
-##### on remote machine:
+#### on remote machine:
 (Step 1 - 3 are usually defined and executed by `~/.bashrc`)
-1. set ROS_IP:            `export ROS_IP=<IP>`)
-2. set ROS_URI:           `export ROS_MASTER_URI=http://<IP>:11311`)
-3. source all Terminals:  `source ~/Projects/ROS_Quadruped/catkin_ws/devel/setup.bash`)
+1. set ROS_IP:            `export ROS_IP=<IP>`
+2. set ROS_URI:           `export ROS_MASTER_URI=http://<IP>:11311`
+3. source all Terminals:  `source ~/Projects/ROS_Quadruped/catkin_ws/devel/setup.bash`
 4. start master:          `roscore`
 5. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
 6. launch webcam          `roslaunch video_stream_opencv webcam.launch`
@@ -87,7 +88,7 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 |:--:|
 |<b>Rviz</b>|
 
-##### on local machine:
+#### on local machine:
 1. set ROS_MASTER_URI:  `export ROS_MASTER_URI=http://<remote IP>:11311`
 2. set ROS_IP:          `export ROS_IP=192.168.178.111`
 3. test connection:     `rostopic list`
