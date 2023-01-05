@@ -73,9 +73,9 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 
 ##### on remote machine:
 (Step 1 - 3 are usually defined and executed by `~/.bashrc`)
-(1. set ROS_IP:            `export ROS_IP=<IP>`)
-(2. set ROS_URI:           `export ROS_MASTER_URI=http://<IP>:11311`)
-(3. source all Terminals:  `source ~/Projects/ROS_Quadruped/catkin_ws/devel/setup.bash`)
+1. set ROS_IP:            `export ROS_IP=<IP>`)
+2. set ROS_URI:           `export ROS_MASTER_URI=http://<IP>:11311`)
+3. source all Terminals:  `source ~/Projects/ROS_Quadruped/catkin_ws/devel/setup.bash`)
 4. start master:          `roscore`
 5. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
 6. launch webcam          `roslaunch video_stream_opencv webcam.launch`
