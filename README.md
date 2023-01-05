@@ -72,25 +72,27 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 4. shh into RPi from local machine: `ssh pi@<IP>` (usually `ssh pi@192.168.150.113`) 
 
 ##### on remote machine:
-1. set ROS_IP:            `export ROS_IP="$(hostname -I)"`
-1. source all Terminals:  `source devel/setup.bash`
-2. start master:          `roscore`
-3. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
-4. launch webcam          `roslaunch video_stream_opencv webcam.launch`
-5. run motion_planning:   `rosrun motion_planning motion_planning_main`
-6. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
+(Step 1 - 3 are usually defined and executed by `~/.bashrc`)
+(1. set ROS_IP:            `export ROS_IP=<IP>`)
+(2. set ROS_URI:           `export ROS_MASTER_URI=http://<IP>:11311`)
+(3. source all Terminals:  `source ~/Projects/ROS_Quadruped/catkin_ws/devel/setup.bash`)
+4. start master:          `roscore`
+5. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
+6. launch webcam          `roslaunch video_stream_opencv webcam.launch`
+7. run motion_planning:   `rosrun motion_planning motion_planning_main`
+8. run hw_ctrl:           `rosrun hw_ctrl hw_motion_main.py`
 
 ### 4.1 View Data in Rviz
 ![](media_files/Screenshot.jpeg)
 |:--:|
 |<b>Rviz</b>|
 
-0. (export ROS_MASTER_URI & ROS_IP on both, local and remote machine,  
-   if not already defined in ~.bashrc, see also: http://wiki.ros.org/ROS/Tutorials/MultipleMachines)  
 ##### on local machine:
-1. test connection:     `rostopic list`
-2. start rviz:          `rviz rviz`
-3. Add Image:           "Add" > "Image"  
+1. set ROS_MASTER_URI:  `export ROS_MASTER_URI=http://<remote IP>:11311`
+2. set ROS_IP:          `export ROS_IP=192.168.178.111`
+3. test connection:     `rostopic list`
+4. start rviz:          `rviz rviz`
+5. Add Image:           "Add" > "Image"  
    subscribe to topic:  "Image" > "Image Topic" > "/webcam/image_raw"
 5. Add LaserScan:       "Add" > "LaserScan"  
    subscribe to topic:  "LaserScan" > "Topic" > "/scan"  
