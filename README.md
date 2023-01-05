@@ -68,11 +68,11 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 ## 4. Startup Procedure 
 1. start mobile hotspot
 2. start RPi
-3. check IP of RPi on hotspot settings (usually `192.168.150.113`)
-4. shh in from local machine: `ssh pi@<IP>` (usually `ssh pi@192.168.150.113`) 
+3. check IP of RPi in hotspot settings (usually `192.168.150.113`)
+4. shh into RPi from local machine: `ssh pi@<IP>` (usually `ssh pi@192.168.150.113`) 
 
 ##### on remote machine:
-1. set ROS_IP:            `export ROS_IP="$(hostname -I)"
+1. set ROS_IP:            `export ROS_IP="$(hostname -I)"`
 1. source all Terminals:  `source devel/setup.bash`
 2. start master:          `roscore`
 3. launch lidar:          `roslaunch rplidar_ros rplidar.launch`
