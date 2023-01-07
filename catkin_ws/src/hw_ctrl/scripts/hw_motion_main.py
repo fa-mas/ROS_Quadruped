@@ -18,6 +18,7 @@ if __name__ == "__main__":
     rate = rospy.Rate(5)
     ###
 
+    # init adafruit driver
     config.setup()
 
     # constants

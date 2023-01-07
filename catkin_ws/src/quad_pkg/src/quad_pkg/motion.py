@@ -270,21 +270,21 @@ class Quadruped:
         self.legD = legD
 
     def ServoFeed(self):
-        config.kit.servo[2].angle = limitAngle(self.legA.alphaCorr, minAngle, maxAngle)
-        config.kit.servo[3].angle = limitAngle(self.legA.betaCorr, minAngle, maxAngle)
-        config.kit.servo[4].angle = limitAngle(self.legA.gammaCorr, minAngle, maxAngle)
+        config.servo_A_alpha.angle = limitAngle(self.legA.alphaCorr, minAngle, maxAngle)
+        config.servo_A_beta.angle = limitAngle(self.legA.betaCorr, minAngle, maxAngle)
+        config.servo_A_gamma.angle = limitAngle(self.legA.gammaCorr, minAngle, maxAngle)
 
-        config.kit.servo[5].angle = limitAngle(self.legB.alphaCorr, minAngle, maxAngle)
-        config.kit.servo[6].angle = limitAngle(self.legB.betaCorr, minAngle, maxAngle)
-        config.kit.servo[7].angle = limitAngle(self.legB.gammaCorr, minAngle, maxAngle)
+        config.servo_B_alpha.angle = limitAngle(self.legB.alphaCorr, minAngle, maxAngle)
+        config.servo_B_beta.angle = limitAngle(self.legB.betaCorr, minAngle, maxAngle)
+        config.servo_B_gamma.angle = limitAngle(self.legB.gammaCorr, minAngle, maxAngle)
 
-        config.kit.servo[8].angle = limitAngle(self.legC.alphaCorr, minAngle, maxAngle)
-        config.kit.servo[9].angle = limitAngle(self.legC.betaCorr, minAngle, maxAngle)
-        config.kit.servo[10].angle = limitAngle(self.legC.gammaCorr, minAngle, maxAngle)
+        config.servo_C_alpha.angle = limitAngle(self.legC.alphaCorr, minAngle, maxAngle)
+        config.servo_C_beta.angle = limitAngle(self.legC.betaCorr, minAngle, maxAngle)
+        config.servo_C_gamma.angle = limitAngle(self.legC.gammaCorr, minAngle, maxAngle)
 
-        config.kit.servo[11].angle = limitAngle(self.legD.alphaCorr, minAngle, maxAngle)
-        config.kit.servo[12].angle = limitAngle(self.legD.betaCorr, minAngle, maxAngle)
-        config.kit.servo[13].angle = limitAngle(self.legD.gammaCorr, minAngle, maxAngle)
+        config.servo_D_alpha.angle = limitAngle(self.legD.alphaCorr, minAngle, maxAngle)
+        config.servo_D_beta.angle = limitAngle(self.legD.betaCorr, minAngle, maxAngle)
+        config.servo_D_gamma.angle = limitAngle(self.legD.gammaCorr, minAngle, maxAngle)
 
     def IncrementalBodyTurn4Legs(self, vA, vB, vC, vD, incSum):
 
