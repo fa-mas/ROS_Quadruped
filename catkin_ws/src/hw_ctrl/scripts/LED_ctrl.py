@@ -7,7 +7,7 @@ import quad_pkg.config as config
 # hw_motion_main.py needs to run before LED_ctrl
 
 # TO DO:
-# wire LEDs directly to adafruit driver
+# wire LEDs directly to adafruit driver GND -> cathode, PWM -> anode, no resistor
 # publish new topic from "motion_planning_main.cpp" which contains obstacle position "obstacle_pos"
 # subscribe to obstacle position and control LEDs accordingly
 
@@ -22,3 +22,4 @@ if __name__ == "__main__":
     sub = rospy.Subscriber("obstacle_pos", String, callback_ctrl_LEDs)
     
     rospy.spin()
+    rospy.loginfo("LED_ctrl shut down")
