@@ -18,10 +18,19 @@ def setup():
     global i2c
     i2c = busio.I2C(board.SCL, board.SDA)
 
-    # setup pca object (pca-Board: VCC-> 3.3V from RPi, GND-> GND from RPi, SCL/SDA-> SCL/SDA from RPi, V+/GND (high Voltage)-> 5V/GND external supply)
+    # setup pca object for Servos (pca-Board: VCC-> 3.3V from RPi, GND-> GND from RPi, SCL/SDA-> SCL/SDA from RPi, V+/GND (high Voltage)-> 5V/GND external supply)
     global kit 
     kit = ServoKit(channels=16)
     kit.frequency = 50
-    for i in range(2,16):
+
+    #setup pca object for LEDs
+    global pca
+    pca = adafruit_pca9685.PCA9685(i2c)
+    pca.frequency = 50
+
+    # Servo setup
+    for i in range(2,13):
         kit.servo[i].set_pulse_width_range(500, 2500)
+
+    
         
