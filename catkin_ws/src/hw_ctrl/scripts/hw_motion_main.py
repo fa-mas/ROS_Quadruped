@@ -35,8 +35,8 @@ if __name__ == "__main__":
     dW = arr([ 82.5, -64, 0]) 
 
     legLen1 = 75  
-    legLen2 = 55 # actually: 55  
-    legLen3 = 200 # actually: 200
+    legLen2 = 55
+    legLen3 = 205
 
     # initial vectors
     xVal, yVal, zVal = 62, 112, 212
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     aGammaOffset = -55
     bGammaOffset = -53
     cGammaOffset = -55
-    dGammaOffset = -45
+    dGammaOffset = -60
 
     # instantiate Leg objects
     A = QM.Leg(vAPrev, a0, aW, ACinitAlpha, initBeta, initGamma, aAlphaOffset, aBetaOffset, aGammaOffset, legLen1, legLen2, legLen3)

@@ -28,6 +28,22 @@ def setup():
     for i in range(2,13):
         kit.servo[i].set_pulse_width_range(500, 2500)
 
+    global servo_A_alpha
+    global servo_A_beta
+    global servo_A_gamma
+
+    global servo_B_alpha
+    global servo_B_beta
+    global servo_B_gamma
+
+    global servo_C_alpha
+    global servo_C_beta
+    global servo_C_gamma
+
+    global servo_D_alpha
+    global servo_D_beta
+    global servo_D_gamma
+
     servo_A_alpha = kit.servo[2]
     servo_A_beta = kit.servo[3]
     servo_A_gamma = kit.servo[4]
@@ -49,7 +65,7 @@ def setup():
     pca = adafruit_pca9685.PCA9685(i2c)
     pca.frequency = 50
 
-    led_channel_A = config.pca.channels[0]
-    led_channel_B = config.pca.channels[1]
-    led_channel_C = config.pca.channels[14]
-    led_channel_D = config.pca.channels[15]
+    led_channel_A = pca.channels[0]
+    led_channel_B = pca.channels[1]
+    led_channel_C = pca.channels[14]
+    led_channel_D = pca.channels[15]
