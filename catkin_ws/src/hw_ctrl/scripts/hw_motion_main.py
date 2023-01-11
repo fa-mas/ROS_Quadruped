@@ -95,8 +95,8 @@ if __name__ == "__main__":
     dest4 = arr([0, -destLen, 0])
     """
 
-    nInc = 50
-    nInc1 = 30
+    nInc = 35
+    nIncTurn = 30
     stepHeightCrawl = 50
     stepHeightTurn = 40
     stepHeightRun = 30
@@ -121,13 +121,13 @@ if __name__ == "__main__":
                 # debug
                 # print(response.ang)
                 for i in range(0,n):
-                    Quad.WholeTurn(-maxTurnAngle, stepHeightTurn, nInc)
+                    Quad.WholeTurn(-maxTurnAngle, stepHeightTurn, nIncTurn)
             elif (response.dir == "turn") and (response.ang < 0):
                 n = floor(abs(response.ang)/maxTurnAngle)
                 # debug
                 # print(response.ang)
                 for i in range(0,n):
-                    Quad.WholeTurn(maxTurnAngle, stepHeightTurn, nInc)
+                    Quad.WholeTurn(maxTurnAngle, stepHeightTurn, nIncTurn)
             else:
                 pass
             
