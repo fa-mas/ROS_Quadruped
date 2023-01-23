@@ -107,7 +107,7 @@ bool give_direction(motion_planning::Direction::Request &req, motion_planning::D
     // default value
     res.dir = "step";
     res.ang = 0;
-    res.vec = {75, 0, 0};
+    res.vec = {100, 0, 0};
 
     // functions to alter response (last one is prioritised)
     // get_user_input(res)
@@ -125,21 +125,21 @@ void avoid_obstacle(motion_planning::Direction::Response &res){
     if ((Obstacle::arr.at(0) == Position::FRONT) && (Obstacle::arr.at(1) == Position::LEFT)){
         // turn right
         res.dir = "turn";
-        res.ang = -60;
+        res.ang = -90;
         res.vec = {0, 0, 0};
     } 
     // obstacle front & right
     else if ((Obstacle::arr.at(0) == Position::FRONT) && (Obstacle::arr.at(1) == Position::RIGHT)){
         // turn left
         res.dir = "turn";
-        res.ang = 60;
+        res.ang = 90;
         res.vec = {0, 0, 0};
     } 
     // obstacle front
     else if (Obstacle::arr.at(0) == Position::FRONT){
         // turn left
         res.dir = "turn";
-        res.ang = 60;
+        res.ang = 90;
         res.vec = {0, 0, 0};
     }
     //obstacle right & left
@@ -147,21 +147,21 @@ void avoid_obstacle(motion_planning::Direction::Response &res){
         // forward
         res.dir = "step";
         res.ang = 0;
-        res.vec = {75, 0, 0};
+        res.vec = {80, 0, 0};
     }
     // obstacle right
     else if (Obstacle::arr.at(0) == Position::RIGHT){
         // step left
         res.dir = "step";
         res.ang = 0;
-        res.vec = {0, 75, 0};
+        res.vec = {0, 80, 0};
     } 
     // obstacle left
     else if (Obstacle::arr.at(0) == Position::LEFT){
         // step right
         res.dir = "step";
         res.ang = 0;
-        res.vec = {0, -75, 0};
+        res.vec = {0, -80, 0};
     }
     ROS_INFO("res ang: %f", res.ang);
 }
