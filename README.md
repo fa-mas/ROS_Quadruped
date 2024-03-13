@@ -69,8 +69,8 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 1. start mobile hotspot
 2. connect local machine to hotspot
 3. start RPi
-4. check IP of RPi in hotspot settings (usually `192.168.150.113`)
-5. shh into RPi from local machine: `ssh pi@<IP>` (usually `ssh pi@192.168.150.113`) 
+4. check IP of RPi in hotspot settings
+5. shh into RPi from local machine: `ssh pi@<IP>`
 
 #### on remote machine:
 (Step 1 - 3 are usually defined and executed by `~/.bashrc`)
