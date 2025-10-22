@@ -69,7 +69,7 @@ The webcam images are published to webcam/image_raw via video_stream_opencv, a p
 1. start mobile hotspot
 2. connect local machine to hotspot
 3. start RPi
-4. check MAC of RPi in hotspot settings
+4. check MAC of RPi in hotspot settings (common ranges include B8:27:EB, DC:A6:32, and 28:CD:C1)
 5. use `arp -a` on local machine to find connected devices
 6. match MAC from hotspot with arp-return on local machine and find IP of RPi
 7. shh into RPi from local machine: `ssh pi@<IP>`
